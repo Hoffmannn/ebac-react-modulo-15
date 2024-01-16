@@ -1,6 +1,4 @@
-# ebac-react-projeto-2
-
-## Tarefa feita para o Desktop. Não está responsiva para mobile
+# ebac-react-modulo-15
  
 ### `npm install`
 
