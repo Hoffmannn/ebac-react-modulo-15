@@ -1,7 +1,8 @@
-import { Box, Button, Card, Image } from "@chakra-ui/react";
+import { Box, Card, Image } from "@chakra-ui/react";
 import React from "react";
 import { formatToCurrency } from "../../utils/formatToCurrenct";
 import { MinusIcon, AddIcon, DeleteIcon } from "@chakra-ui/icons";
+import Button from "../../ebac-ds/button/Button";
 
 // import { Container } from './styles';
 
@@ -45,7 +46,7 @@ function CartItem({ product, setCart }) {
       <Box display="flex" flexDir="column" flex={1} gap={2}>
         <h3>{name}</h3>
         <Box display="flex" flexDir="row" flex={1} alignItems="center" gap={2}>
-          <Button height={8} width={8} onClick={() => handleRemoveItem()}>
+          <Button onClick={() => handleRemoveItem()}>
             {quantity === 1 ? (
               <DeleteIcon boxSize={3} />
             ) : (
@@ -55,7 +56,7 @@ function CartItem({ product, setCart }) {
 
           <span>{quantity}</span>
 
-          <Button height={8} width={8} onClick={() => handleAddItem()}>
+          <Button onClick={() => handleAddItem()}>
             <AddIcon boxSize={3} />
           </Button>
 

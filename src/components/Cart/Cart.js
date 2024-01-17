@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Drawer,
   DrawerBody,
@@ -15,6 +14,7 @@ import React, { useMemo } from "react";
 import CartItem from "./CartItem";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import { formatToCurrency } from "../../utils/formatToCurrenct";
+import Button from "../../ebac-ds/button/Button";
 function Cart({ cart, setCart, isOpen, onClose }) {
   const toast = useToast();
   const cartValue = useMemo(() => {

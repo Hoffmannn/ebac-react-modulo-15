@@ -1,6 +1,7 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 import { Facebook, Instagram, Twitter } from "react-bootstrap-icons";
+import Button from "../ebac-ds/button/Button";
 
 // import { Container } from './styles';
 

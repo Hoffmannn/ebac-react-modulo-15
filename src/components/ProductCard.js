@@ -9,11 +9,11 @@ import {
   Stack,
   Box,
   Image,
-  Button,
   useToast,
 } from "@chakra-ui/react";
 import { CartPlus } from "react-bootstrap-icons";
 import { formatToCurrency } from "../utils/formatToCurrenct";
+import Button from "../ebac-ds/button/Button";
 
 function ProductCard({ product, handleAddProduct }) {
   const { name, photo, price, description } = product || {};

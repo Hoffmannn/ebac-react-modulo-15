@@ -1,8 +1,9 @@
 import React from "react";
 
-import { Button, Divider, Image, Tab, TabList, Tabs } from "@chakra-ui/react";
+import { Divider, Image, Tab, TabList, Tabs } from "@chakra-ui/react";
 import logo from "../../assets/logo-color.png";
 import { Cart } from "react-bootstrap-icons";
+import Button from "../../ebac-ds/button/Button";
 
 function NavBar({ setIsCartOpen }) {
   return (
@@ -25,7 +26,7 @@ function NavBar({ setIsCartOpen }) {
           <Tab isDisabled>Contato</Tab>
           <Tab isDisabled>Minha conta</Tab>
         </TabList>
-        <Button mr={20} onClick={() => setIsCartOpen(true)}>
+        <Button mr={5} onClick={() => setIsCartOpen(true)}>
           <Cart color="#776E9A" size={32} />
         </Button>
       </Tabs>
