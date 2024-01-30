@@ -38,10 +38,15 @@ function Cart({ cart, setCart, isOpen, onClose }) {
     <Drawer onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay />
       <DrawerContent backgroundColor="#fafdf5">
-        <DrawerHeader borderBottomWidth="1px" backgroundColor="#fff">
+        <DrawerHeader
+          display="flex"
+          gap={4}
+          borderBottomWidth="1px"
+          backgroundColor="#fff"
+        >
           <Button onClick={onClose}>
             <ChevronLeftIcon />
-          </Button>{" "}
+          </Button>
           Carrinho
         </DrawerHeader>
         <DrawerBody>

@@ -1,19 +1,10 @@
 import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Text,
-  StackDivider,
-  Heading,
-  Stack,
-  Box,
-  Image,
-  useToast,
-} from "@chakra-ui/react";
 import { CartPlus } from "react-bootstrap-icons";
 import { formatToCurrency } from "../utils/formatToCurrenct";
 import Button from "../ebac-ds/button/Button";
+import { Box, Card, Divider } from "../ebac-ds/ebac-ds";
+import { Image, Text, useToast } from "@chakra-ui/react";
+import Title from "./title/Title";
 
 function ProductCard({ product, handleAddProduct }) {
   const { name, photo, price, description } = product || {};
@@ -31,32 +22,28 @@ function ProductCard({ product, handleAddProduct }) {
   };
   return (
     <Card width="xs" height="100%">
-      <CardHeader paddingBottom={0}>
-        <Image src={photo} draggable={false} height={"200px"} margin="auto" />
-        <Heading size="md">{name}</Heading>
-      </CardHeader>
+      <Image src={photo} draggable={false} height={"200px"} margin="auto" />
+      <Title>{name}</Title>
 
-      <CardBody paddingTop={0}>
-        <Stack divider={<StackDivider />}>
-          <Text pt="2" fontSize="sm">
-            {description}
-          </Text>
-          <Box
-            display="flex"
-            flexDir="row"
-            justifyContent="center"
-            alignItems="baseline"
-            gap={5}
-          >
-            <Text pt="2" fontSize="lg">
-              {formatToCurrency(price)}
-            </Text>
-            <Button onClick={handleAdd}>
-              Adicionar <CartPlus style={{ marginLeft: 5 }} />
-            </Button>
-          </Box>
-        </Stack>
-      </CardBody>
+      <Text pt="2" fontSize="sm">
+        {description}
+      </Text>
+
+      <Divider />
+      <Box
+        display="flex"
+        flexDir="row"
+        justifyContent="center"
+        alignItems="baseline"
+        gap={20}
+      >
+        <Text pt="2" fontSize="lg">
+          {formatToCurrency(price)}
+        </Text>
+        <Button onClick={handleAdd}>
+          Adicionar <CartPlus style={{ marginLeft: 5 }} />
+        </Button>
+      </Box>
     </Card>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Button.css";
 
-function Button({ onClick, mh, mv, ml, mr, mt, mb, p, ...props }) {
+function Button({ onClick, mh, mv, ml, mr, mt, mb, p, isDisabled, ...props }) {
   const mhorizontal = mh ? `mh${mh}` : "";
   const mvertical = mv ? `mv${mv}` : "";
   const mleft = ml ? `ml${ml}` : "";
@@ -11,10 +11,18 @@ function Button({ onClick, mh, mv, ml, mr, mt, mb, p, ...props }) {
 
   const padding = p ? `pa${p}` : "pa2";
 
+  const disabledStyles = isDisabled
+    ? { cursor: "not-allowed", opacity: "0.5" }
+    : {};
+
   return (
     <button
       onClick={onClick}
-      className={`bg-lightest-blue button ${mhorizontal} ${mvertical} ${mleft} ${mright} ${mtop} ${mbottom} ${padding}`}
+      disabled={isDisabled}
+      className={`bg-lightest-blue ${
+        isDisabled ? "" : "button"
+      } ${mhorizontal} ${mvertical} ${mleft} ${mright} ${mtop} ${mbottom} ${padding}`}
+      style={disabledStyles}
     >
       {props.children}
     </button>

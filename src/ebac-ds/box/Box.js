@@ -1,5 +1,8 @@
 import React from "react";
-function Card({
+
+// import { Container } from './styles';
+
+function Box({
   margin,
   marginHorizontal,
   marginVertical,
@@ -21,7 +24,7 @@ function Card({
   fixed,
   ...props
 }) {
-  const mhorizontal = marginHorizontal ? `mh${marginHorizontal}` : "mh2";
+  const mhorizontal = marginHorizontal ? `mh${marginHorizontal}` : "";
   const mvertical = marginVertical ? `mv${marginVertical}` : "";
   const mleft = marginLeft ? `ml${marginLeft}` : "";
   const mright = marginRight ? `mr${marginRight}` : "";
@@ -39,16 +42,15 @@ function Card({
   const displayBox = display ? `${display}` : "";
   const dir = flexDiretcion ? `flex-${flexDiretcion}` : "";
   const f = fixed ? "fixed" : "";
-  const bg = backgroundColor ? `bg-${backgroundColor}` : "bg-white";
+  const bg = backgroundColor ? `bg-${backgroundColor}` : "";
 
   return (
     <div
       className={` ${mhorizontal} ${mvertical} ${mleft} ${mright} ${mtop} ${mbottom} ${f} ${p} ${pb} ${pl} ${pr} ${pt} ${align} ${just} ${displayBox} ${dir} ${bg} `}
-      style={{ ...props.style, borderWidth: 1, borderRadius: 5 }}
+      style={{ ...props.style, gap: gap || 0, top: 0 }}
     >
       {props.children}
     </div>
   );
 }
-
-export default Card;
+export default Box;

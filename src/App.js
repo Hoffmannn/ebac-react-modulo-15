@@ -4,6 +4,7 @@ import CategoriesContainer from "./components/Categories/CategoriesContainer";
 import NavBar from "./components/NavBar/NavBar";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer";
+import { Container } from "./ebac-ds/ebac-ds";
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,13 +23,15 @@ function App() {
   return (
     <div className="App">
       <NavBar setIsCartOpen={setIsCartOpen} />
-      <CategoriesContainer handleAddProduct={handleAddProduct} />
-      <Cart
-        cart={cart}
-        setCart={setCart}
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-      />
+      <Container>
+        <CategoriesContainer handleAddProduct={handleAddProduct} />
+        <Cart
+          cart={cart}
+          setCart={setCart}
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+        />
+      </Container>
       <Footer />
     </div>
   );

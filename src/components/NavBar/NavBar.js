@@ -1,36 +1,36 @@
 import React from "react";
 
-import { Divider, Image, Tab, TabList, Tabs } from "@chakra-ui/react";
-import logo from "../../assets/logo-color.png";
+import { Image } from "@chakra-ui/react";
+import logo from "../../assets/logo.png";
 import { Cart } from "react-bootstrap-icons";
-import Button from "../../ebac-ds/button/Button";
+import { Box, Button } from "../../ebac-ds/ebac-ds";
 
 function NavBar({ setIsCartOpen }) {
   return (
     <>
-      <Tabs
+      <Box
         display="flex"
         alignItems="center"
-        backgroundColor="#E6E9E0"
-        gap={10}
-        padding={1}
-        width="100%"
-        position="fixed"
+        backgroundColor="washed-yellow"
+        fixed
+        style={{ width: "100%", zIndex: 1001 }}
+        justifyContent="between"
         zIndex={1001}
+        paddingLeft={5}
+        paddingRight={5}
       >
         <Image src={logo} w={200} fit="contain" />
-        <TabList flex={1} gap={20}>
-          <Tab>Início</Tab>
-          <Tab isDisabled>Produtos</Tab>
-          <Tab isDisabled>Sobre nós</Tab>
-          <Tab isDisabled>Contato</Tab>
-          <Tab isDisabled>Minha conta</Tab>
-        </TabList>
-        <Button mr={5} onClick={() => setIsCartOpen(true)}>
+        <Box display="flex" flex={1} gap={20}>
+          <Button>Início</Button>
+          <Button isDisabled>Produtos</Button>
+          <Button isDisabled>Sobre nós</Button>
+          <Button isDisabled>Contato</Button>
+          <Button isDisabled>Minha conta</Button>
+        </Box>
+        <Button onClick={() => setIsCartOpen(true)}>
           <Cart color="#776E9A" size={32} />
         </Button>
-      </Tabs>
-      <Divider color="#776E9A" />
+      </Box>
     </>
   );
 }
