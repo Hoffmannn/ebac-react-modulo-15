@@ -15,6 +15,10 @@ Executa o servidor utilizado pela aplicação
  
 
 # ebac-ds ( design system aplicado no projeto )
+
+## `npm run storybook`  
+
+Executa StoryBook para visualização de componentes
  
 ### Componentes
 

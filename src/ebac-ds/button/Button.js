@@ -1,7 +1,19 @@
 import React from "react";
 import "./Button.css";
 
-function Button({ onClick, mh, mv, ml, mr, mt, mb, p, isDisabled, ...props }) {
+function Button({
+  label,
+  onClick,
+  mh,
+  mv,
+  ml,
+  mr,
+  mt,
+  mb,
+  p,
+  isDisabled,
+  ...props
+}) {
   const mhorizontal = mh ? `mh${mh}` : "";
   const mvertical = mv ? `mv${mv}` : "";
   const mleft = ml ? `ml${ml}` : "";
@@ -24,6 +36,7 @@ function Button({ onClick, mh, mv, ml, mr, mt, mb, p, isDisabled, ...props }) {
       } ${mhorizontal} ${mvertical} ${mleft} ${mright} ${mtop} ${mbottom} ${padding}`}
       style={disabledStyles}
     >
+      {label && label}
       {props.children}
     </button>
   );
